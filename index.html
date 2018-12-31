@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://lvgames.net https://www.googleapis.com https://googleads.g.doubleclick.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' https://lienquan.garena.vn http://lvgames.net https://www.googleapis.com data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <title>Câu Đố về Liên Quân</title>
+  <link rel="stylesheet" href="shared/css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="shared/css/jquery-ui.css">
+  <link rel="stylesheet" href="shared/css/animate.css">
+  <link rel="stylesheet" href="shared/css/main.css">
+  <script type="text/javascript" src="shared/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="shared/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="shared/js/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="shared/js/jquery.animateNumber.min.js"></script>
+  <script type="text/javascript" src="shared/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="shared/js/ques-stack.js"></script>
+  <script type="text/javascript" src="shared/js/main.js"></script>
+</head>
+<body id="deviceready" data-appversion="10002">
+<div id="wrap-countdown"></div>
+<div id="wrap-updated"><div class="holder"><div class="inner"><div class="content"><p><strong>Cập nhật ứng dụng</strong></p><br><p>Đã có bản cập nhật mới nhất, cả nhà cùng update nhé!!</p><p><a href="#" rel="external" class="ui-btn op-btn-update">Cập nhật</a></p></div></div></div></div>
+<div id="wrap-review"><div class="holder"><div class="inner"><div class="content"><p>Mọi người cùng Đánh Giá ứng dụng để ngày càng phát triển nhé!</p><p class="zkalcenter">&#9734;&#9734;&#9734;&#9734;&#9734;</p><p><a href="#" rel="external" class="ui-btn op-btn-review">Đánh Giá</a><a href="#" class="ui-btn btn-close">Lần Sau</a></p></div></div></div></div>
+
+  <div id="first-screen" class="fs-style">
+    <div class="zkpanel-free01"><div class="zkpanel-free02">
+      <div class="fs-style-inner">
+        <h3 class="zkmtb0">1. Phần thưởng</h3>
+        <p class="zkfs-small">Đây là phần thưởng lần đầu khi tham gia trò chơi.</p>
+        <ul class="zkmt0">
+          <li>3 trái tim <img src="shared/img/common/heart.png" alt=""></li>
+          <li>Hạng Gỗ 3 <img src="shared/img/common/rank_go.png" width="64" alt=""></li>
+        </ul>
+        <h3 class="zkmtb0">2. Hướng dẫn chơi</h3>
+        <p class="zkfs-small">Phần trả lời câu hỏi</p>
+        <ul class="zkmt0">
+          <li>2 đáp án Đúng hoặc Sai</li>
+          <li>3 giây thời gian trả lời</li>
+          <li>Trả lời nhanh điểm cao</li>
+          <li>x2 điểm cho câu hỏi có Ngôi Sao</li>
+          <li>Dùng <img src="shared/img/common/heart.png" alt=""> để tiếp tục chơi</li>
+          <li>Tích tối đa 3 trái tim (1 phút tặng 1)</li>
+          <li>Gửi điểm vào BXH khi có điểm cao mới</li>
+        </ul>
+        <h3 class="zkmtb0">3. Xếp hạng</h3>
+        <p class="zkfs-small">3 Gỗ có nghĩa là Bậc Gỗ có 3 Bậc, tương tự cho rank khác, mỗi Bậc chênh lệch 50 điểm, KC trở lên là 100 điểm (KC 1, KC 2,..).</p>
+        <p class="zkalcenter"><img src="shared/img/common/ranksheet.png" alt=""></p>
+        <div class="zkbtnfirstscreen zkbtn"><span>Tiếp tục nào!!</span></div>
+        <span class="close zkbtn-sound">X</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div id="dialog-confirm"></div>
+
+  <div class="result-panel"><img src="#" alt=""></div>
+
+  <!-- Start of first page: #firstpage -->
+  <div data-role="page" id="firstpage">
+    <div role="main" class="ui-content">
+      <div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04">
+        <div class="zktitle"><span>Hạng Cao Nhất</span></div>        
+        <div class="zkfs-small">
+          <div class="zkname-main"><span class="zkname-main-user">#</span> <span class="zkname-main-bh">(BH: <i>#</i>)</span></div>
+          <div class="qtrank zkshared_link_name zkfw-strong"><span>#</span></div>
+          <div class="qthighscore op_get_fb_share">_ <span>1</span> điểm _</div>
+        </div>
+        <div class="qtrankimg"><img src="#" alt="#"></div>
+        <div class="zkshared_link"><a href="#" target="_blank" class="zknormal_link">FB/Chia sẻ Hạng</a></div>
+        <div class="btn-start zkbtn"><span>Bắt Đầu Nào!</span></div>
+      </div></div></div></div>   
+      <div class="zkpanel-free01"><div class="zkpanel-free02">
+        <div class="zkbtn-circle">
+          <a href="#rank"><span class="ico">&nbsp;</span></a><a href="#info"><span class="ico">&nbsp;</span></a><a href="#bgmusic"><span class="ico">&nbsp;</span></a><div class="bgheart-btn"><span class="bgheart-countdown">#</span><span class="bgheart-txt">Nhận tim</span><span class="bgheart-show">#</span><a href="#bgheart"><span class="ico">&nbsp;</span></a></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Start of first page: #main -->
+  <div data-role="page" id="main">
+    <div role="main" class="ui-content">
+      <div class="zkbrd01 zkmb0"><div class="zkbrd02"><div class="zkbrd03">
+        <div class="zktitle zkscore"><span><div class="qtscore"><span>#</span></div><div class="qtstar"><img src="shared/img/common/icon_star.gif" alt=""></div></span></div>
+        <div class="qthighscore">Điểm cao: <span>0</span></div>
+        <div class="qtheart"><img src="shared/img/common/heart.png" alt=""> x <span>0</span></div>
+        <div class="zkbrd01 zkprogress"><div class="zkbrd02"><div class="zkbrd03">
+          <div id="progressBar">
+            <div></div>
+          </div>
+        </div></div></div>
+        <div class="qtimg">
+          <div class="zkquesimg"></div>
+          <div class="qtname">#</div>
+        </div>
+      </div></div></div>
+      <div class="qtresult zkresult">
+        <div class="btn-answer qtleft"><div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04"><span>Đúng ời</span></div></div></div></div></div>
+        <div class="btn-answer qtright"><div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04"><span>Sai ời</span></div></div></div></div></div>
+      </div>
+    </div><!-- /content -->
+  </div><!-- /page main -->
+
+  <!-- Start of first page: #restart -->
+  <div data-role="page" id="restart">
+    <div role="main" class="ui-content">
+      <div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04">
+        <div class="zktitle qtnotify"><span>#</span></div>
+        <div class="zkpanel zkmtb0">
+          <div class="qtnewscore">Ván vừa rồi<br><span class="zkpanel-span">0</span> điểm</div>
+          <div class="qthighscorestage">Điểm cao mới<br><span class="zkpanel-span">0</span> điểm <a href="#bxh-page" class="btn-send-point">Gửi điểm -></a></div>
+          <p class="zkimg02"><img src="#" alt=""><br><span>#</span></p>
+          <div class="zkcol zkfs-small zkmt10">
+            <div class="qtrank">Hạng: <span>chưa có</span> | </div>
+            <div class="qthighscore">Điểm cao: <span>0</span> điểm</div>
+          </div>
+        </div>
+        <div class="btn-restart zkbtn"><span>Chơi Lại Nào!</span></div>
+      </div></div></div></div>
+      <div class="zkpanel-free01">
+        <div class="zkpanel-free02">
+          <div class="zkbtn-circle">
+            <a href="#firstpage"><span class="ico">&nbsp;</span></a><a href="#rank"><span class="ico">&nbsp;</span></a><a href="#info"><span class="ico">&nbsp;</span></a><div class="bgheart-btn"><span class="bgheart-countdown">#</span><span class="bgheart-txt">Nhận tim</span><span class="bgheart-show">#</span><a href="#bgheart"><span class="ico">&nbsp;</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /content -->
+  </div><!-- /page main -->
+
+  <!-- Start of BXH: #bxh-page -->
+  <div data-role="page" id="bxh-page">
+    <div role="main" class="ui-content">
+      <div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04">
+        <div class="zktitle"><span>Thông Tin Gửi Điểm</span></div>
+        <p class="zkmt0" id="zknumber_fm_val">Biệt hiệu: <span>#</span></p>
+        <div class="zkpanel">
+          <div class="zkbxh_fm">
+            <!-- <form action="http://lvgames.net/bxh/bxhlqm/" id="zkbxh_fm" method="get"> -->
+              <label for="zkname_fm_val">
+                <input type="text" id="zkname_fm_val" placeholder="Nhập tên vào..." required>
+                <span>*Tên chỉ nhập lần đầu (bắt buộc)</span>
+              </label>
+              <label for="zkphone_fm_val">
+                <input type="text" id="zkphone_fm_val" placeholder="Nhập số điện thoại vào...">
+                <span>*Dùng để liên lạc khi có quà tặng</span>
+              </label>
+              <label for="zkpoint_fm_val">
+                <input type="text" id="zkpoint_fm_val" disabled="disable">
+                <span>*Điểm gửi đi</span>
+              </label>
+              <label for="zkrank_fm_val" class="last">
+                <input type="text" id="zkrank_fm_val" disabled="disable">
+                <span>*Hạng hiện tại của bạn</span>
+              </label>
+              <input type="hidden" id="zkname_fm" name="zkname_fm">
+              <input type="hidden" id="zkphone_fm" name="zkphone_fm">
+              <input type="hidden" id="zkpoint_fm" name="zkpoint_fm">
+              <input type="hidden" id="zkrank_fm" name="zkrank_fm">
+              <input type="hidden" id="zknumber_fm" name="zknumber_fm">
+              <input type="hidden" id="zkdate_fm" name="zkdate_fm">
+            <!-- </form> -->
+          </div>
+        </div>
+        <div class="btn-bxh-page zkbtn"><span>Gửi đi nào!!</span></div>
+      </div></div></div></div>
+      <div class="zkpanel-free01">
+        <div class="zkpanel-free02">
+          <div class="zkbtn-circle">
+            <a href="#firstpage"><span class="ico">&nbsp;</span></a><a href="#rank"><span class="ico">&nbsp;</span></a><a href="#info"><span class="ico">&nbsp;</span></a><div class="bgheart-btn"><span class="bgheart-countdown">#</span><span class="bgheart-txt">Nhận tim</span><span class="bgheart-show">#</span><a href="#bgheart"><span class="ico">&nbsp;</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /content -->
+  </div><!-- /page main -->
+
+  <!-- Start of first page: #rank -->
+  <div data-role="page" id="rank">
+    <div role="main" class="ui-content">
+      <div class="zkbrd01"><div class="zkbrd02"><div class="zkbrd03"><div class="zkbrd04">
+        <div class="zktitle"><span>Bảng Xếp Hạng Hôm Nay</span></div>
+        <div id="zkranking-board" class="bxh_tbl"></div>
+        <div class="zkbtn"><span><a href="http://lvgames.net/bxh/bxhboard/" target="_blank">Xem thêm</a></span></div>
+      </div></div></div></div>
+      <div class="zkpanel-free01">
+        <div class="zkpanel-free02">
+          <div class="zkbtn-circle">
+            <a href="#firstpage"><span class="ico">&nbsp;</span></a><a href="#info"><span class="ico">&nbsp;</span></a><a href="#bgmusic"><span class="ico">&nbsp;</span></a><div class="bgheart-btn"><span class="bgheart-countdown">#</span><span class="bgheart-txt">Nhận tim</span><span class="bgheart-show">#</span><a href="#bgheart"><span class="ico">&nbsp;</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /content -->
+  </div><!-- /page main -->
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
